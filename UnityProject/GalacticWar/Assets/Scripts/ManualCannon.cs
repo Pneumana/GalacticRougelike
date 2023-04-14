@@ -11,6 +11,8 @@ public class ManualCannon : MonoBehaviour
     public string bullet;
 
     public bool attackCooldown;
+    public float chargeMax = -1;
+    public float currentCharge;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +23,43 @@ public class ManualCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //look at cursor
         Vector2 target = new Vector2(cursor.transform.position.x, cursor.transform.position.y);
         Vector2 current = new Vector2(transform.position.x,transform.position.y);
         float rot_z = Mathf.Atan2(target.y - current.y, target.x - current.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-        if (Input.GetKey(KeyCode.Mouse0) && !attackCooldown)
+
+        //cannon does not have charge up
+        if (Input.GetKey(KeyCode.Mouse0) && !attackCooldown && chargeMax <= 0)
         {
             //shoot
             animator.SetTrigger("shoot");
+        }
+        //cannon has charge up
+        if (chargeMax > 0)
+        {
+            //charge up cannon
+            if (Input.GetKey(KeyCode.Mouse0) && !attackCooldown)
+            {
+                currentCharge += Time.deltaTime;
+            }
+            //reset charge on cannon
+            if (!Input.GetKey(KeyCode.Mouse0) && !attackCooldown && currentCharge > 0)
+            {
+                currentCharge -= Time.deltaTime;
+            }
+            //fire on mouse up
+            if (chargeMax <= currentCharge && Input.GetKeyUp(KeyCode.Mouse0) && !attackCooldown)
+            {
+                animator.SetTrigger("shoot");
+                currentCharge = 0;
+            }
+            //fire on overcharge
+            if (chargeMax * 2 <= currentCharge && Input.GetKey(KeyCode.Mouse0) && !attackCooldown)
+            {
+                animator.SetTrigger("shoot");
+                currentCharge = 0;
+            }
         }
     }
 
