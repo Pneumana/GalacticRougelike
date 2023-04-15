@@ -63,7 +63,7 @@ public class AutoTurret : MonoBehaviour
         var newbullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullets/" + bullet)) as GameObject;
         newbullet.transform.position = transform.position;
         newbullet.transform.localRotation = transform.rotation;
-        Debug.Log("pew!");
+        //Debug.Log("pew!");
     }
     public void ReArmCannon()
     {
