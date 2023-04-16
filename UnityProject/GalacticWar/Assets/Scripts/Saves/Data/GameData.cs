@@ -20,6 +20,8 @@ public class GameData
         this.deaths = 0;
         this.health = 50;
         this.money = 0;
+        this.crystals = 0;
+        this.exoticmatter = 0;
         this.shipframe = "Basic";
         this.weapons = new List<string> {"Basic"};
     }

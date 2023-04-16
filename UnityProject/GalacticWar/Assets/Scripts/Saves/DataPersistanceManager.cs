@@ -18,7 +18,11 @@ public class DataPersistanceManager : MonoBehaviour
         {
             Debug.Log("there are 2 data managers in this scene");
         }
-        Instance = this;
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
     }
     private void Start()
     {
