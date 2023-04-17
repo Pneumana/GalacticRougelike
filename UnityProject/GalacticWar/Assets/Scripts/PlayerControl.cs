@@ -37,5 +37,13 @@ public class PlayerControl : MonoBehaviour
             body.rotation -= turnSpeed * Time.deltaTime;
         }
         body.velocity = transform.up * y;
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            Camera.main.orthographicSize += 0.1f;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            Camera.main.orthographicSize -= 0.1f;
+        }
     }
 }

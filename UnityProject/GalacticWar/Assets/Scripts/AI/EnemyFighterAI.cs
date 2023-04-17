@@ -14,6 +14,7 @@ public class EnemyFighterAI : MonoBehaviour
     public AlertOwner aggroRange;
     public float lockedOn;
     public GameObject lockedOnObj;
+    public bool avaoidingcollide;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,12 @@ public class EnemyFighterAI : MonoBehaviour
         }
 
         Vector2 current = new Vector2(transform.position.x, transform.position.y);
-        float rot_z = Mathf.Atan2(target.y - current.y, target.x - current.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, 0f, rot_z - 90), turnSpeed * Time.deltaTime);
+        
+        
         
         if (aggroRange.targets.Count > 0)
         {
-            if ((Vector2.Distance(target, current) > speed)) 
+            if ((Vector2.Distance(target, current) > speed) && !avaoidingcollide) 
             {
                 float closestDistance = Mathf.Infinity;
                 GameObject closestTarget = null;
@@ -54,29 +55,44 @@ public class EnemyFighterAI : MonoBehaviour
                 {*/
                 lockedOnObj = closestTarget;
                 lockedOn = 5;
+                //if(!avaoidingcollide)
                 target = new Vector2(lockedOnObj.transform.position.x, lockedOnObj.transform.position.y);
                 //}
             }
         }
         else 
         {
-            if (Vector2.Distance(target, current) < speed)
+            if (Vector2.Distance(target, current) < 1.5f && !avaoidingcollide)
             {
                 Patrol();
             }
         }
         //will keep targeting the target outside of their aggro range until the locked on counter expires
-        if (lockedOn > 0)
+        if (lockedOn > 0 && !avaoidingcollide)
         {
-            if (Vector2.Distance(target, current) < speed)
+            target = lockedOnObj.transform.position;
+        }
+        //start avoiding target
+        if(lockedOnObj != null)
+        {
+            if (Vector2.Distance(lockedOnObj.transform.position, current) < speed && !avaoidingcollide)
             {
-                target = -transform.up * speed;
-            }
-            else
-            {
-                target = lockedOnObj.transform.position;
+                //Debug.Log("too close!");
+                float lookAngle = Mathf.Atan2(target.y - current.y, target.x - current.x) * Mathf.Rad2Deg;
+                Debug.Log(lookAngle);
+                target = new Vector2(current.x + (Mathf.Cos(-lookAngle) * speed), current.y + (Mathf.Sin(-lookAngle) * speed));
+                avaoidingcollide = true;
             }
         }
+        
+        if (Vector2.Distance(target, current) < 1.5f)
+        {
+            //Debug.Log("re-enabling hunting");
+            if (avaoidingcollide)
+                avaoidingcollide = false;
+        }
+        float rot_z = Mathf.Atan2(target.y - current.y, target.x - current.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, 0f, rot_z - 90), turnSpeed * Time.deltaTime);
         body.velocity = transform.up *speed;
     }
     private void OnDrawGizmos()

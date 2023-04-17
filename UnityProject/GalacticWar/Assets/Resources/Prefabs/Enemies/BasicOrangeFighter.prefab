@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 3453543840185690583}
   - component: {fileID: 8792328496368503003}
   - component: {fileID: 4801206851239773859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BasicOrangeFighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,6 +351,7 @@ MonoBehaviour:
   aggroRange: {fileID: 7243319637991699465}
   lockedOn: 0
   lockedOnObj: {fileID: 0}
+  avaoidingcollide: 0
 --- !u!212 &3453543840185690583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ GameObject:
   - component: {fileID: 4791010504450539770}
   - component: {fileID: 6004041415316602488}
   - component: {fileID: 7696494021614291579}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AutoCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
