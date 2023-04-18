@@ -330,9 +330,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  health: 0
+  health: 15
   shield: 0
+  currentHealth: 0
+  currentShield: 0
   shieldDelay: -1
+  shieldRegen: 0.01
 --- !u!114 &1790764601955283373
 MonoBehaviour:
   m_ObjectHideFlags: 0
