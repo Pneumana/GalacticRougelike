@@ -273,7 +273,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 5
   m_AngularDrag: 5
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -311,6 +311,7 @@ MonoBehaviour:
   team: 0
   health: 50
   shield: 0
+  shieldDelay: -1
 --- !u!1 &9027611055407068551
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,10 +34,10 @@ public class EnemyFighterAI : MonoBehaviour
         Vector2 current = new Vector2(transform.position.x, transform.position.y);
         
         
-        
+        //need to be able to check if there is a new closest object to avoid while avoiding
         if (aggroRange.targets.Count > 0)
         {
-            if ((Vector2.Distance(target, current) > speed) && !avaoidingcollide) 
+            if ((Vector2.Distance(target, current) > speed)) 
             {
                 float closestDistance = Mathf.Infinity;
                 GameObject closestTarget = null;
@@ -55,14 +55,14 @@ public class EnemyFighterAI : MonoBehaviour
                 {*/
                 lockedOnObj = closestTarget;
                 lockedOn = 5;
-                //if(!avaoidingcollide)
-                target = new Vector2(lockedOnObj.transform.position.x, lockedOnObj.transform.position.y);
+                if(!avaoidingcollide)
+                    target = new Vector2(lockedOnObj.transform.position.x, lockedOnObj.transform.position.y);
                 //}
             }
         }
         else 
         {
-            if (Vector2.Distance(target, current) < 1.5f && !avaoidingcollide)
+            if (Vector2.Distance(target, current) < 2.5f && !avaoidingcollide)
             {
                 Patrol();
             }
@@ -75,17 +75,21 @@ public class EnemyFighterAI : MonoBehaviour
         //start avoiding target
         if(lockedOnObj != null)
         {
-            if (Vector2.Distance(lockedOnObj.transform.position, current) < speed && !avaoidingcollide)
+            if (Vector2.Distance(lockedOnObj.transform.position, current) < speed )
             {
-                //Debug.Log("too close!");
-                float lookAngle = Mathf.Atan2(target.y - current.y, target.x - current.x) * Mathf.Rad2Deg;
-                Debug.Log(lookAngle);
-                target = new Vector2(current.x + (Mathf.Cos(-lookAngle) * speed), current.y + (Mathf.Sin(-lookAngle) * speed));
-                avaoidingcollide = true;
+                if (!avaoidingcollide)
+                {
+                    float lookAngle = Mathf.Atan2(target.y - current.y, target.x - current.x) * Mathf.Rad2Deg;
+                    Debug.Log(lookAngle);
+                    target = new Vector2(current.x + (Mathf.Cos(-lookAngle) * speed), current.y + (Mathf.Sin(-lookAngle) * speed));
+                    avaoidingcollide = true;
+                }
+                Debug.Log("too close!");
+                
             }
         }
         
-        if (Vector2.Distance(target, current) < 1.5f)
+        if (Vector2.Distance(target, current) < 2.5f)
         {
             //Debug.Log("re-enabling hunting");
             if (avaoidingcollide)
@@ -98,6 +102,11 @@ public class EnemyFighterAI : MonoBehaviour
     private void OnDrawGizmos()
     {
         Debug.DrawLine(transform.position, target, Color.red);
+
+        if(lockedOnObj != null)
+        {
+            Debug.DrawLine(transform.position, lockedOnObj.transform.position, Color.green);
+        }
     }
     public void SetTargetToAttacker(Vector2 attacker)
     {

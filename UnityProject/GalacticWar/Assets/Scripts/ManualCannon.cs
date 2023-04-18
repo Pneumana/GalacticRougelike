@@ -68,6 +68,7 @@ public class ManualCannon : MonoBehaviour
         //modify the 1 by whatever multiplier is used for the animation speed
         attackCooldown = true;
         var newbullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullets/" + bullet)) as GameObject;
+        newbullet.layer = gameObject.layer;
         newbullet.transform.position = transform.position;
         newbullet.transform.localRotation = transform.rotation;
         //Debug.Log("pew!");
