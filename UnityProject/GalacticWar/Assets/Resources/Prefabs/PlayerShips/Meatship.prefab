@@ -555,7 +555,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 5
   m_AngularDrag: 5
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -590,11 +590,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   health: 50
-  shield: 0
+  shield: 100
   currentHealth: 0
   currentShield: 0
-  shieldDelay: -1
-  shieldRegen: 0.01
+  isDead: 0
+  shieldDelay: 10
+  shieldRegen: 0.05
 --- !u!1 &9027611055407068551
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,14 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
     {
         var newship = GameObject.Instantiate(Resources.Load("Prefabs/PlayerShips/" + name)) as GameObject;
         newship.transform.position = transform.position;
+        if(GameObject.Find("RestrictArea") != null)
+        {
+            GameObject.Find("RestrictArea").GetComponent<RestrictPlayArea>().player = newship;
+        }
+        if (GameObject.Find("PointToCenter") != null)
+        {
+            GameObject.Find("PointToCenter").GetComponent<PlayAreaArrow>().player = newship;
+        }
         Destroy(this.gameObject);
     }
     public void LoadData(GameData data)

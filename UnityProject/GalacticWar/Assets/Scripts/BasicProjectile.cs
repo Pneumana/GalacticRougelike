@@ -10,6 +10,7 @@ public class BasicProjectile : MonoBehaviour
     public float lifespan;
     public int damage;
     public int team;
+    public string payload;
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -32,6 +33,22 @@ public class BasicProjectile : MonoBehaviour
         {
                 shipbody.TakeDamage(damage);
         }
+        //spawn payload
+        if(payload != "")
+        {
+            var impact = GameObject.Instantiate(Resources.Load("Prefabs/Bullets/" + payload)) as GameObject;
+            impact.transform.position = transform.position;
+            impact.layer = gameObject.layer;
+        }
+        
         Destroy(gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var shipbody = collision.gameObject.GetComponent<ShipBody>();
+        if (shipbody != null)
+        {
+            shipbody.TakeDamage(damage);
+        }
     }
 }
