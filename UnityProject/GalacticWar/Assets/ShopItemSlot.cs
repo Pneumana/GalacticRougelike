@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,9 +21,9 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public string sellingItem;
     public int itemType;
-    public string[] loottable = new string[] { "Basic", "Railgun" };
-    public string[] shiptable = new string[] { "Basic", "Advanced" };
-    public string[] contracts = new string[] { "Dude", "OtherGuy" };
+    private string[] loottable = new string[] { "Basic", "Railgun" };
+    private string[] shiptable = new string[] { "Basic", "Advanced", "Meatship"};
+    private string[] contracts = new string[] { "Dude", "OtherGuy" };
 
     //i could do a fetch damage from prefab type thing for each entry. this makes it so this part only needs to have flavortext written.
     //checks each entry compared to the loottable[] to get the prefab name, then gets the spawned projectile, and from there the damage can be got.
@@ -30,6 +31,11 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private string[] guninfo = new string[] {
         "Damage: 5 \nRate of Fire:1\n0 Pierces\n0s Charge Time\n\nA reliable, standard kinetic slug cannon.",
         "Damage: 20 \nRate of Fire:0.5\nInfinite Pierces\n1s Charge Time\n\nShoots a high velocity slug using magnets."
+    };
+    private string[] shipinfo = new string[] {
+        "Health: \nSpeed: \nAgility: \nShield\n\nBasic chassis for small ships",
+        "Health: \nSpeed: \nAgility: \nShield\n\nBasic chassis for medium ships",
+        "Health: \nSpeed: \nAgility: \nShield\n\nA ship nicknamed after it's flesh-like plating"
     };
     // Start is called before the first frame update
     void Start()
@@ -46,14 +52,18 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         //ships
         if(itemType == 1)
         {
-            sellingItem = shiptable[Random.Range(0, shiptable.Length)];
-            display.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load("Textures/ships/" + sellingItem) as Sprite;
+            var item = Random.Range(0, shiptable.Length);
+            sellingItem = shiptable[item];
+            display.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Textures/ships/" + sellingItem);
+            additionalInfo.transform.Find("WeaponInfo").gameObject.GetComponent<TextMeshProUGUI>().text = shipinfo[item];
+            title.GetComponent<TextMeshProUGUI>().text = sellingItem;
         }
         //contracts
         if(itemType == 2)
         {
             display.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load("Textures/contracts/" + sellingItem) as Sprite;
         }
+        Debug.Log(shiptable.Count());
     }
 
     // Update is called once per frame
