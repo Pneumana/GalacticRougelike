@@ -40,6 +40,7 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     // Start is called before the first frame update
     void Start()
     {
+        //get damage from attack
         //weapon
         if(itemType == 0)
         {
