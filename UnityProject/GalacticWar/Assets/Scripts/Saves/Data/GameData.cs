@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameData
 {
     public int deaths;
+    public int missionsCompleted;
     //player's current health
     public int health;
     public int money;
