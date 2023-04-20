@@ -103,6 +103,7 @@ MonoBehaviour:
   lifespan: 1
   damage: 5
   team: 0
+  payload: 
 --- !u!50 &8335033740344253843
 Rigidbody2D:
   serializedVersion: 4

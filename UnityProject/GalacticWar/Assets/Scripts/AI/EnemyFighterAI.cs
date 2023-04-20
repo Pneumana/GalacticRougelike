@@ -84,7 +84,7 @@ public class EnemyFighterAI : MonoBehaviour
                     target = new Vector2(current.x + (Mathf.Cos(-lookAngle) * speed), current.y + (Mathf.Sin(-lookAngle) * speed));
                     avaoidingcollide = true;
                 }
-                Debug.Log("too close!");
+                //Debug.Log("too close!");
                 
             }
         }
