@@ -12,6 +12,8 @@ public class GameData
     public int crystals;
     public int exoticmatter;
     public string shipframe;
+    //references the index of the weapons list
+    public List<int> equippedWeapons;
     //hull patches and shields also go here.
     public List<string> weapons;
 
@@ -24,6 +26,7 @@ public class GameData
         this.crystals = 0;
         this.exoticmatter = 0;
         this.shipframe = "Basic";
+        this.equippedWeapons = new List<int> { 0 };
         this.weapons = new List<string> {"Basic"};
     }
 }

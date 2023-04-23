@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 8792328496368503003}
   - component: {fileID: 4801206851239773859}
   m_Layer: 8
-  m_Name: BasicBlueFighter
+  m_Name: Destroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
