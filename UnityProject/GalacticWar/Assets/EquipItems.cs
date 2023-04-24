@@ -8,6 +8,7 @@ public class EquipItems : MonoBehaviour
     public int indexOffest;
     public List<string> displayIDs = new List<string> { "None", "None", "None", "None" };
     public GameObject[] displays;
+    public int selected;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +42,11 @@ public class EquipItems : MonoBehaviour
         if (indexOffest < 12)
             indexOffest += 4;
         UpdateDisplay();
+    }
+    public void GetSelected(int index)
+    {
+        selected = indexOffest + index;
+        Debug.Log("picked slot " + selected);
+        Debug.Log(DataPersistanceManager.Instance.gameData.weapons[selected]);
     }
 }

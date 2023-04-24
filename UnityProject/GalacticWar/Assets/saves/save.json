@@ -7,6 +7,9 @@
     "exoticmatter": 0,
     "shipframe": "Meatship",
     "equippedWeapons": [
+        2,
+        1,
+        0,
         0
     ],
     "weapons": [
