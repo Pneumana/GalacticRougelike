@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 1790764601955283373}
   - component: {fileID: 3453543840185690583}
   - component: {fileID: 8792328496368503003}
-  - component: {fileID: 3067990612253826728}
+  - component: {fileID: 250994754266022682}
   m_Layer: 8
   m_Name: BasicBlueFighter
   m_TagString: Untagged
@@ -539,7 +539,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c34a7a8f92014394d97ff558d2e706f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d41d563627f6d9440a98f6cc8a8d8998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -571,7 +571,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &3067990612253826728
+--- !u!60 &250994754266022682
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -596,20 +596,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.65625, y: 0.75}
-      - {x: 0.34375, y: 1}
-      - {x: -0.375, y: 1}
-      - {x: -0.71875, y: 0.75}
-      - {x: -0.41887292, y: 0.37834638}
-      - {x: -0.7111467, y: 0.31082684}
-      - {x: -0.71875, y: -0.1875}
-      - {x: -0.46586463, y: -0.39519963}
-      - {x: -0.2880168, y: -0.9923967}
-      - {x: 0.33280033, y: -0.9923967}
-      - {x: 0.45863688, y: -0.3528784}
-      - {x: 0.7111467, y: -0.15366615}
-      - {x: 0.68833655, y: 0.27113688}
-      - {x: 0.43575272, y: 0.3842765}
+    - - {x: 0.6704316, y: 0.15625}
+      - {x: 0.28125, y: 0.875}
+      - {x: 0.17542043, y: 0.9879204}
+      - {x: -0.16334087, y: 0.9879204}
+      - {x: -0.3991592, y: 0.61634}
+      - {x: -0.6825112, y: 0.1433858}
+      - {x: -0.6825113, y: -0.2791479}
+      - {x: -0.40861842, y: -0.38419288}
+      - {x: -0.6320907, y: -0.69669294}
+      - {x: -0.375, y: -1}
+      - {x: 0.375, y: -1}
+      - {x: 0.6452215, y: -0.7027327}
+      - {x: 0.4004766, y: -0.3621358}
+      - {x: 0.6764715, y: -0.31039792}
 --- !u!1 &7524053821046791757
 GameObject:
   m_ObjectHideFlags: 0
