@@ -39,12 +39,7 @@ public class BasicProjectile : MonoBehaviour
                 shipbody.TakeDamage(damage);
         }
         //spawn payload
-        if(payload != "")
-        {
-            var impact = GameObject.Instantiate(Resources.Load("Prefabs/Bullets/" + payload)) as GameObject;
-            impact.transform.position = transform.position;
-            impact.layer = gameObject.layer;
-        }
+        
         
         Destroy(gameObject);
     }
@@ -54,8 +49,15 @@ public class BasicProjectile : MonoBehaviour
         if (shipbody != null)
         {
             shipbody.TakeDamage(damage);
+            if (payload != "")
+            {
+                var impact = GameObject.Instantiate(Resources.Load("Prefabs/Bullets/" + payload)) as GameObject;
+                impact.transform.position = transform.position;
+                impact.layer = gameObject.layer;
+            }
+            if (!pierces)
+                Destroy(gameObject);
         }
-        if (!pierces)
-            Destroy(gameObject);
+        
     }
 }

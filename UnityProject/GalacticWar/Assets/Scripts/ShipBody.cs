@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class ShipBody : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class ShipBody : MonoBehaviour
     public float shieldDelay = -1;
     private float hittimer;
     public float shieldRegen = 0.01f;
+    private List<IObjective> objectives;
     public void Start()
     {
         currentHealth = health;
@@ -61,6 +64,11 @@ public class ShipBody : MonoBehaviour
             newship.transform.position = transform.position;
             newship.transform.parent = transform;
         }
+        objectives = GetObjectiveKeepers();
+        foreach (IObjective objective in objectives)
+        {
+            objective.OnKill(gameObject);
+        }
         //create explosionFX
         isDead = true;
     }
@@ -94,5 +102,10 @@ public class ShipBody : MonoBehaviour
         {
             Die();
         }
+    }
+    private List<IObjective> GetObjectiveKeepers()
+    {
+        IEnumerable<IObjective> dataPersistancesObjs = FindObjectsOfType<MonoBehaviour>().OfType<IObjective>();
+        return new List<IObjective>(dataPersistancesObjs);
     }
 }
