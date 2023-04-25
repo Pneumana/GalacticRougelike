@@ -59,15 +59,22 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
         {
             var newequip = slots.GetComponent<EquipItems>().selected;
             if (!DataPersistanceManager.Instance.gameData.equippedWeapons.Contains(newequip))
+            {
                 DataPersistanceManager.Instance.gameData.equippedWeapons[arrayIndex] = newequip;
+                Debug.Log("");
+            }
+                
             else
                 Debug.Log("That weapon is already equipped");
             Debug.Log(DataPersistanceManager.Instance.gameData.equippedWeapons);
         }
         if (isGun)
         {
-            transform.Find("Circle").gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Textures/guns/" + DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[arrayIndex]]);
-            transform.localScale = new Vector3(2, 2, 1);
+            if(DataPersistanceManager.Instance.gameData.equippedWeapons[arrayIndex] > -1)
+            {
+                transform.Find("Circle").gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Textures/guns/" + DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[arrayIndex]]);
+                transform.localScale = new Vector3(2, 2, 1);
+            }
         }
     }
     public void SaveData(ref GameData data)

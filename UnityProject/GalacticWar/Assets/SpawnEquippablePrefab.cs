@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -61,6 +62,12 @@ public class SpawnEquippablePrefab : MonoBehaviour, IDataPersistance
     void LateUpdate()
     {
 
+    }
+    public void ReloadShip()
+    {
+        Destroy(spawnedship);
+        var shipname = DataPersistanceManager.Instance.gameData.shipframe;
+        SpawnShip(shipname);
     }
     public void SaveData(ref GameData data)
     {

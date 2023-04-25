@@ -150,6 +150,18 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                     bought = true;
                     display.GetComponent<UnityEngine.UI.Image>().color = new Color(0.5f, 0.5f, 0.5f);
                     soldText.GetComponent<TextMeshProUGUI>().enabled = true;
+                    //weapons
+                    if(itemType == 0)
+                    {
+                        currentGamedata.weapons.Add(sellingItem);
+                    }
+                    //ships
+                    if(itemType == 1)
+                    {
+                        //reload equipped prefab
+                        currentGamedata.shipframe = sellingItem;
+                        GameObject.Find("SpawnPrefab").GetComponent<SpawnEquippablePrefab>().ReloadShip();
+                    }
                 }
                 else
                 {

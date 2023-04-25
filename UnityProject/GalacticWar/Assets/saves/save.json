@@ -2,20 +2,29 @@
     "deaths": 0,
     "missionsCompleted": 0,
     "health": 50,
-    "money": 99997899,
+    "money": 99997599,
     "crystals": 0,
     "exoticmatter": 0,
     "shipframe": "Meatship",
     "equippedWeapons": [
-        2,
         1,
-        0,
-        0
+        3,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
     ],
     "weapons": [
         "Storm",
         "Storm",
         "Railgun",
-        "Railgun"
+        "Railgun",
+        "Basic"
     ]
 }

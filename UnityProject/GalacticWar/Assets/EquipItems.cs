@@ -8,7 +8,8 @@ public class EquipItems : MonoBehaviour
     public int indexOffest;
     public List<string> displayIDs = new List<string> { "None", "None", "None", "None" };
     public GameObject[] displays;
-    public int selected;
+    public GameObject[] selector;
+    public int selected = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,15 @@ public class EquipItems : MonoBehaviour
             else
                 displayIDs[i] = "None";
             displays[i].GetComponent<Image>().sprite = Resources.Load<Sprite>("Textures/guns/" + displayIDs[i]);
+
+            if (selected - indexOffest == i)
+            {
+                selector[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
+            else 
+            {
+                selector[i].GetComponent<Image>().color = new Color(1, 1, 1, 0);
+            }
         }
         //spawn 
     }
@@ -47,6 +57,8 @@ public class EquipItems : MonoBehaviour
     {
         selected = indexOffest + index;
         Debug.Log("picked slot " + selected);
+        UpdateDisplay();
         Debug.Log(DataPersistanceManager.Instance.gameData.weapons[selected]);
+
     }
 }
