@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class ShipBody : MonoBehaviour
 {
@@ -9,10 +11,12 @@ public class ShipBody : MonoBehaviour
     public int shield;
     public int currentHealth;
     public float currentShield;
+    public bool isDead;
     //delay before the shield starts regenerating
     public float shieldDelay = -1;
     private float hittimer;
     public float shieldRegen = 0.01f;
+    private List<IObjective> objectives;
     public void Start()
     {
         currentHealth = health;
@@ -27,6 +31,46 @@ public class ShipBody : MonoBehaviour
             //restores 1% of max shield per second
             currentShield += (shield * shieldRegen) * Time.deltaTime;
         }
+
+    }
+    void Die()
+    {
+        AutoTurret[] turrets = GetComponentsInChildren<AutoTurret>();
+        ManualCannon[] cannons = GetComponentsInChildren<ManualCannon>();
+        //die
+        Debug.Log("I AM HAVE DIE! GRAHHH");
+        if (gameObject.GetComponent<PlayerControl>() != null)
+        {
+            gameObject.GetComponent<PlayerControl>().enabled = false;
+        }
+        if (gameObject.GetComponent<EnemyFighterAI>() != null)
+        {
+            gameObject.GetComponent<EnemyFighterAI>().enabled = false;
+
+        }
+        gameObject.GetComponent<Collider2D>().isTrigger = true;
+        //disable autocannons
+        foreach (AutoTurret cannon in turrets)
+        {
+            cannon.enabled = false;
+        }
+        foreach (ManualCannon cannon in cannons)
+        {
+            cannon.enabled = false;
+        }
+        if (!isDead)
+        {
+            var newship = GameObject.Instantiate(Resources.Load("Prefabs/FVX/explosion")) as GameObject;
+            newship.transform.position = transform.position;
+            newship.transform.parent = transform;
+        }
+        objectives = GetObjectiveKeepers();
+        foreach (IObjective objective in objectives)
+        {
+            objective.OnKill(gameObject);
+        }
+        //create explosionFX
+        isDead = true;
     }
     public void TakeDamage(int damage, int healthDMG = 0, int shieldDMG = 0, bool piercesShield = false, bool isEMP = false)
     {
@@ -45,7 +89,7 @@ public class ShipBody : MonoBehaviour
             }
             if (currentShield <= 0)
             {
-                health -= damage + healthDMG;
+                currentHealth -= damage + healthDMG;
             }
                 
         }
@@ -56,24 +100,12 @@ public class ShipBody : MonoBehaviour
         }
         if(currentHealth <= 0)
         {
-            AutoTurret[] turrets = GetComponentsInChildren<AutoTurret>();
-            //die
-            Debug.Log("I AM HAVE DIE! GRAHHH");
-            if(gameObject.GetComponent<PlayerControl>() != null)
-            {
-                gameObject.GetComponent<PlayerControl>().enabled = false;
-            }
-            if (gameObject.GetComponent<EnemyFighterAI>() != null)
-            {
-                gameObject.GetComponent<EnemyFighterAI>().enabled = false;
-                
-            }
-            gameObject.GetComponent<Collider2D>().isTrigger = true;
-            //disable autocannons
-            foreach (AutoTurret cannon in turrets)
-            {
-                cannon.enabled = false;
-            }
+            Die();
         }
+    }
+    private List<IObjective> GetObjectiveKeepers()
+    {
+        IEnumerable<IObjective> dataPersistancesObjs = FindObjectsOfType<MonoBehaviour>().OfType<IObjective>();
+        return new List<IObjective>(dataPersistancesObjs);
     }
 }

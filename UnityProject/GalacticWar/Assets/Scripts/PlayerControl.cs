@@ -39,11 +39,11 @@ public class PlayerControl : MonoBehaviour
         body.velocity = transform.up * y;
         if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            Camera.main.orthographicSize += 0.1f;
+            Camera.main.orthographicSize -= 0.5f;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            Camera.main.orthographicSize -= 0.1f;
+            Camera.main.orthographicSize += 0.5f;
         }
     }
 }

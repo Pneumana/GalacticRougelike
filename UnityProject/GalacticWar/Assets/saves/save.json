@@ -1,14 +1,30 @@
 {
     "deaths": 0,
+    "missionsCompleted": 0,
     "health": 50,
-    "money": 99999099,
+    "money": 99997599,
     "crystals": 0,
     "exoticmatter": 0,
-    "shipframe": "Advanced",
+    "shipframe": "Meatship",
+    "equippedWeapons": [
+        2,
+        1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+    ],
     "weapons": [
-        "Basic",
-        "Basic",
+        "Storm",
+        "Storm",
         "Railgun",
-        "Railgun"
+        "Railgun",
+        "Basic"
     ]
 }

@@ -5,12 +5,15 @@ using UnityEngine;
 public class GameData
 {
     public int deaths;
+    public int missionsCompleted;
     //player's current health
     public int health;
     public int money;
     public int crystals;
     public int exoticmatter;
     public string shipframe;
+    //references the index of the weapons list
+    public List<int> equippedWeapons;
     //hull patches and shields also go here.
     public List<string> weapons;
 
@@ -23,6 +26,7 @@ public class GameData
         this.crystals = 0;
         this.exoticmatter = 0;
         this.shipframe = "Basic";
+        this.equippedWeapons = new List<int> { 0,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1 };
         this.weapons = new List<string> {"Basic"};
     }
 }
