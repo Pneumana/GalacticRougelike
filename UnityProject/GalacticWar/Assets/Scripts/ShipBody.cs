@@ -102,6 +102,7 @@ public class ShipBody : MonoBehaviour
         {
             Die();
         }
+        //overkill damage destroys the game object
     }
     private List<IObjective> GetObjectiveKeepers()
     {
