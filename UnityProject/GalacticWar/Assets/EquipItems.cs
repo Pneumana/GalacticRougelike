@@ -27,15 +27,28 @@ public class EquipItems : MonoBehaviour
             else
                 displayIDs[i] = "None";
             displays[i].GetComponent<Image>().sprite = Resources.Load<Sprite>("Textures/guns/" + displayIDs[i]);
-
+            selector[i].GetComponent<Image>().color = new Color(1, 1, 0, 1);
             if (selected - indexOffest == i)
             {
                 selector[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
             }
-            else 
+            if(!DataPersistanceManager.Instance.gameData.equippedWeapons.Contains(i + indexOffest) && selected - indexOffest != i)
             {
-                selector[i].GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                selector[i].GetComponent<Image>().color = new Color(1, 0, 0, 0);
             }
+                //equipped but not selected
+/*            if(i + indexOffest == DataPersistanceManager.Instance.gameData.equippedWeapons[i + indexOffest])
+            {
+                selector[i].GetComponent<Image>().color = new Color(1, 0, 0, 1);
+                Debug.Log("equipped but not selected");
+            }*/
+                /*else
+                {
+                    selector[i].GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                }*/
+                //neither
+                
+
         }
         //spawn 
     }
