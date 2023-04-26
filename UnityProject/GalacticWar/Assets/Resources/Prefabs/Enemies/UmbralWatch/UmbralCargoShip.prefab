@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 1979777197010933161}
   - component: {fileID: 8293636579951063816}
   - component: {fileID: 307774502207578792}
-  - component: {fileID: 8634892228131659016}
+  - component: {fileID: -963579447726579146}
   - component: {fileID: 7139245555651169822}
   - component: {fileID: 6642364167102599535}
   m_Layer: 8
@@ -522,7 +522,7 @@ MonoBehaviour:
   isDead: 0
   shieldDelay: -1
   shieldRegen: 0.01
---- !u!114 &8634892228131659016
+--- !u!114 &-963579447726579146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,17 +531,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6762046966575549279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498fab9f85fbb8e47ba2c6f13d9adc39, type: 3}
+  m_Script: {fileID: 11500000, guid: d232801632f1a83498c41da8fa84b6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 2
-  target: {x: 0, y: 0}
-  speed: 0
-  turnSpeed: 0
-  aggroRange: {fileID: 0}
-  lockedOn: 0
-  lockedOnObj: {fileID: 0}
-  avaoidingcollide: 0
+  speed: 4
 --- !u!50 &7139245555651169822
 Rigidbody2D:
   serializedVersion: 4

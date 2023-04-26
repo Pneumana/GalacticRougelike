@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 0}
-  bullet: BasicBullet
+  bullet: Rocket
   attackCooldown: 0
   chargeMax: -1
   currentCharge: 0

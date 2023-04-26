@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4860843464360687970}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &7389641155728552192
 TrailRenderer:
@@ -173,7 +173,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4860843464360687970}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5722847253445440650
 SpriteRenderer:
@@ -311,15 +311,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3255453897883701278}
   - {fileID: 3255453897212342685}
-  - {fileID: 4993041920954264159}
-  - {fileID: 1157527814843591271}
+  - {fileID: 3767333709351482163}
+  - {fileID: 3255453897883701278}
   - {fileID: 6646037096475697170}
   - {fileID: 2464799438443443745}
   - {fileID: 2540272682122464569}
-  - {fileID: 3767333709351482163}
   - {fileID: 8774487202401807448}
+  - {fileID: 4993041920954264159}
+  - {fileID: 1157527814843591271}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  health: 0
+  health: 10000
   shield: 0
   currentHealth: 0
   currentShield: 0
@@ -558,7 +558,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4860843464360687970}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &6057505341137057683
 TrailRenderer:
@@ -689,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,8 +731,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359094270921433111, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
+--- !u!1 &798839324860790222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140469239893603412, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
+  m_PrefabInstance: {fileID: 3631004058446889370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1790919341242003571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798839324860790222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: {fileID: 3937855050023470952}
+  bullet: RailgunBullet
+  attackCooldown: 0
+  inheiritedTeam: 0
+  looksAt: {x: 0, y: 0}
+  nothingNear: 0
 --- !u!4 &6646037096475697170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
@@ -759,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -801,13 +825,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359094270921433111, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
 --- !u!4 &3255453897883701278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_PrefabInstance: {fileID: 4860843464532619670}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8791248259024995778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140469239893603412, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
+  m_PrefabInstance: {fileID: 4860843464532619670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6189042734404463071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791248259024995778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: {fileID: 3937855050023470952}
+  bullet: RailgunBullet
+  attackCooldown: 0
+  inheiritedTeam: 0
+  looksAt: {x: 0, y: 0}
+  nothingNear: 0
 --- !u!1001 &4860843464934985749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -829,7 +877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 41749acc657263743b445f85d3c78763, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 41749acc657263743b445f85d3c78763, type: 3}
       propertyPath: m_LocalPosition.x
@@ -871,13 +919,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359094270921433111, guid: 41749acc657263743b445f85d3c78763, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41749acc657263743b445f85d3c78763, type: 3}
 --- !u!4 &3255453897212342685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7951278258869903752, guid: 41749acc657263743b445f85d3c78763, type: 3}
   m_PrefabInstance: {fileID: 4860843464934985749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8791248258353636417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140469239893603412, guid: 41749acc657263743b445f85d3c78763, type: 3}
+  m_PrefabInstance: {fileID: 4860843464934985749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039540345168930579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791248258353636417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: {fileID: 3937855050023470952}
+  bullet: BasicBullet
+  attackCooldown: 0
+  inheiritedTeam: 0
+  looksAt: {x: 0, y: 0}
+  nothingNear: 0
 --- !u!1001 &5506819829328959401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -899,7 +971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -941,13 +1013,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359094270921433111, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
 --- !u!4 &2464799438443443745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_PrefabInstance: {fileID: 5506819829328959401}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8437988284800492541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140469239893603412, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
+  m_PrefabInstance: {fileID: 5506819829328959401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &512466066754039139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437988284800492541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: {fileID: 3937855050023470952}
+  bullet: RailgunBullet
+  attackCooldown: 0
+  inheiritedTeam: 0
+  looksAt: {x: 0, y: 0}
+  nothingNear: 0
 --- !u!1001 &5555262679149702321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -969,7 +1065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,13 +1107,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359094270921433111, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
 --- !u!4 &2540272682122464569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7951278258869903752, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
   m_PrefabInstance: {fileID: 5555262679149702321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8389545502910830821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140469239893603412, guid: 051f2642d1089a8418affeb0a4d57114, type: 3}
+  m_PrefabInstance: {fileID: 5555262679149702321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6934242567757126716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389545502910830821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: {fileID: 3937855050023470952}
+  bullet: RailgunBullet
+  attackCooldown: 0
+  inheiritedTeam: 0
+  looksAt: {x: 0, y: 0}
+  nothingNear: 0
 --- !u!1001 &6489932797615395515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,7 +1159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 41749acc657263743b445f85d3c78763, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7951278258869903752, guid: 41749acc657263743b445f85d3c78763, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1081,10 +1201,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359094270921433111, guid: 41749acc657263743b445f85d3c78763, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41749acc657263743b445f85d3c78763, type: 3}
 --- !u!4 &3767333709351482163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7951278258869903752, guid: 41749acc657263743b445f85d3c78763, type: 3}
   m_PrefabInstance: {fileID: 6489932797615395515}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7162194179027625711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4140469239893603412, guid: 41749acc657263743b445f85d3c78763, type: 3}
+  m_PrefabInstance: {fileID: 6489932797615395515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3447968840863542793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162194179027625711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: {fileID: 3937855050023470952}
+  bullet: BasicBullet
+  attackCooldown: 0
+  inheiritedTeam: 0
+  looksAt: {x: 0, y: 0}
+  nothingNear: 0

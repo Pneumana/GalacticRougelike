@@ -10,7 +10,8 @@ public class DataPersistanceManager : MonoBehaviour
     [Header("File Storage Config")]
     [SerializeField] private string filename;
     private FileDataHandler dataHandler;
-
+    //money you get from a mission
+    public int Payout;
     public static DataPersistanceManager Instance { get; private set; }
     private void Awake()
     {
