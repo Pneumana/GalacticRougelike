@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 8526041060101643724}
   m_Layer: 0
   m_Name: Advanced
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +313,7 @@ MonoBehaviour:
   shield: 0
   currentHealth: 0
   currentShield: 0
+  isDead: 0
   shieldDelay: -1
   shieldRegen: 0.01
 --- !u!1 &9027611055407068551
