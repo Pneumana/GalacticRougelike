@@ -27,6 +27,12 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
         {
             GameObject.Find("PointToCenter").GetComponent<PlayAreaArrow>().player = newship;
         }
+        var loadguns = GameObject.FindGameObjectsWithTag("LoadGun");
+        foreach(GameObject loader in loadguns)
+        {
+            var loaderData = loader.GetComponent<PlayerLoadedData>();
+            loaderData.SpawnGun(DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[loaderData.arrayIndex]]);
+        }
         Destroy(this.gameObject);
     }
     public void LoadData(GameData data)

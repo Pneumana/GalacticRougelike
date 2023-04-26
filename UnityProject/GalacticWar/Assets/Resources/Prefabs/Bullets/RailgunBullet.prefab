@@ -148,3 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   lifespan: 1
+  damage: 0
+  team: 0
+  acceleration: 0
+  maxAcceleration: 0
+  payload: 
+  pierces: 1
