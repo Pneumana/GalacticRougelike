@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectiveTracker : MonoBehaviour, IObjective
 {
+    bool spawnedItem;
     public List<GameObject> objectives = new List<GameObject> ();
     GameObject player = null;
     public List<GameObject> objectMarkers = new List<GameObject> ();
@@ -58,6 +59,17 @@ public class ObjectiveTracker : MonoBehaviour, IObjective
         {
             Debug.Log("all objectives killed");
             //create extraction zone at 0,0
+            foreach (GameObject game in objectMarkers)
+            {
+                Destroy(game);
+            }
+            if (!spawnedItem)
+            {
+                var exit = Instantiate(Resources.Load<GameObject>("Prefabs/GameLogic/ExtractionZone"));
+                exit.transform.position = new Vector3(0, 0, 0);
+                spawnedItem = true;
+            }
+            
         }
         else
         {
