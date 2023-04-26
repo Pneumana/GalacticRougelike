@@ -594,8 +594,9 @@ MonoBehaviour:
   currentHealth: 0
   currentShield: 0
   isDead: 0
-  shieldDelay: 10
-  shieldRegen: 0.05
+  shieldDelay: 1
+  hittimer: 1
+  shieldRegen: 1
 --- !u!1 &9027611055407068551
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,11 @@ public class ShopMenuCamera : MonoBehaviour
     }
     public void Equipment()
     {
-        Camera.main.transform.position = new Vector3(25.5f, 0, -10);
+        Camera.main.transform.position = new Vector3(30f, 0, -10);
     }
     public void Jobs()
     {
-        Camera.main.transform.position = new Vector3(-25.5f, 0, -10);
+        Camera.main.transform.position = new Vector3(-30f, 0, -10);
     }
     public void Shop()
     {

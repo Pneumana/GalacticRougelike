@@ -19,6 +19,7 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
     {
         var newship = GameObject.Instantiate(Resources.Load("Prefabs/PlayerShips/" + name)) as GameObject;
         newship.transform.position = transform.position;
+        newship.GetComponent<ShipBody>().currentHealth = DataPersistanceManager.Instance.gameData.health;
         if(GameObject.Find("RestrictArea") != null)
         {
             GameObject.Find("RestrictArea").GetComponent<RestrictPlayArea>().player = newship;
@@ -27,11 +28,21 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
         {
             GameObject.Find("PointToCenter").GetComponent<PlayAreaArrow>().player = newship;
         }
+        var ui = Instantiate(Resources.Load("Prefabs/PlayerHealth")) as GameObject;
         var loadguns = GameObject.FindGameObjectsWithTag("LoadGun");
         foreach(GameObject loader in loadguns)
         {
             var loaderData = loader.GetComponent<PlayerLoadedData>();
-            loaderData.SpawnGun(DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[loaderData.arrayIndex]]);
+            var goofiestVar = DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[loaderData.arrayIndex]];
+            if (goofiestVar == "Shield")
+            {
+                newship.GetComponent<ShipBody>().shield += 5;
+            }
+            if (goofiestVar == "Hull")
+            {
+                newship.GetComponent<ShipBody>().health += 15;
+            }
+            loaderData.SpawnGun(goofiestVar);
         }
         Destroy(this.gameObject);
     }

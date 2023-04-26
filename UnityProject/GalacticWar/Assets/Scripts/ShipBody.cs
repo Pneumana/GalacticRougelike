@@ -14,7 +14,7 @@ public class ShipBody : MonoBehaviour
     public bool isDead;
     //delay before the shield starts regenerating
     public float shieldDelay = -1;
-    private float hittimer;
+    public float hittimer;
     public float shieldRegen = 0.01f;
     private List<IObjective> objectives;
     public void Start()
@@ -25,13 +25,14 @@ public class ShipBody : MonoBehaviour
     private void Update()
     {
         if(hittimer > 0)
+        {
             hittimer -= Time.deltaTime;
-        if(shieldDelay <=0 && shieldDelay > -1 && currentShield< shield)
+        }
+        if(hittimer <=0 && hittimer > -1 && currentShield< shield)
         {
             //restores 1% of max shield per second
             currentShield += (shield * shieldRegen) * Time.deltaTime;
         }
-
     }
     void Die()
     {
