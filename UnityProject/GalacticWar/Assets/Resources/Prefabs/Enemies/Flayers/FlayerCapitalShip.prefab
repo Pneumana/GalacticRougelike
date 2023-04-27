@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: {fileID: 0}
+  aggroRange: {fileID: 3677463106798029272}
   bullet: BasicBullet
   attackCooldown: 0
   inheiritedTeam: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: {fileID: 0}
+  aggroRange: {fileID: 3677463106798029272}
   bullet: BasicBullet
   attackCooldown: 0
   inheiritedTeam: 0
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: {fileID: 0}
+  aggroRange: {fileID: 3677463106798029272}
   bullet: BasicBullet
   attackCooldown: 0
   inheiritedTeam: 0
@@ -931,6 +931,7 @@ MonoBehaviour:
   currentShield: 0
   isDead: 0
   shieldDelay: -1
+  hittimer: 0
   shieldRegen: 0.01
 --- !u!50 &7359166334443041618
 Rigidbody2D:
@@ -1155,7 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: {fileID: 0}
+  aggroRange: {fileID: 3677463106798029272}
   bullet: BasicBullet
   attackCooldown: 0
   inheiritedTeam: 0
@@ -1559,7 +1560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: {fileID: 0}
+  aggroRange: {fileID: 3677463106798029272}
   bullet: BasicBullet
   attackCooldown: 0
   inheiritedTeam: 0
@@ -1702,7 +1703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  mybody: {fileID: 0}
+  mybody: {fileID: 7440953669556320532}
 --- !u!1 &8880926245513072134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840800ca0dbafec4db9fb918f0f6a1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: {fileID: 0}
+  aggroRange: {fileID: 3677463106798029272}
   bullet: BasicBullet
   attackCooldown: 0
   inheiritedTeam: 0

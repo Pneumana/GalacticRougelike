@@ -568,12 +568,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  health: 50
+  health: 75
   shield: 25
   currentHealth: 0
   currentShield: 0
   isDead: 0
   shieldDelay: -1
+  hittimer: 0
   shieldRegen: 0.01
 --- !u!114 &5095984909547751958
 MonoBehaviour:
@@ -582,7 +583,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7450296678317673880}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 498fab9f85fbb8e47ba2c6f13d9adc39, type: 3}
   m_Name: 
@@ -729,7 +730,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7450296678317673880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d232801632f1a83498c41da8fa84b6e7, type: 3}
   m_Name: 

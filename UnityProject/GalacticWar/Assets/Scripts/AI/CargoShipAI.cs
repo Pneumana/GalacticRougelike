@@ -20,5 +20,9 @@ public class CargoShipAI : MonoBehaviour
     void Update()
     {
         body.velocity = transform.up * speed;
+        if(GetComponent<ShipBody>().isDead )
+        {
+            body.velocity = Vector2.zero;
+        }
     }
 }

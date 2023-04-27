@@ -989,12 +989,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  health: 50
+  health: 75
   shield: 25
   currentHealth: 0
   currentShield: 0
   isDead: 0
   shieldDelay: -1
+  hittimer: 0
   shieldRegen: 0.01
 --- !u!114 &8476802925497537416
 MonoBehaviour:

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6541188154014100143}
   - component: {fileID: 6541188154014100140}
   - component: {fileID: 2613627704274306102}
+  - component: {fileID: 8009677693517230757}
   m_Layer: 7
   m_Name: FlayerFighter
   m_TagString: Untagged
@@ -60,6 +61,7 @@ MonoBehaviour:
   currentShield: 0
   isDead: 0
   shieldDelay: -1
+  hittimer: 0
   shieldRegen: 0.01
 --- !u!114 &6541188154014100142
 MonoBehaviour:
@@ -201,6 +203,19 @@ PolygonCollider2D:
       - {x: 0.4480934, y: -0.71369505}
       - {x: 0.7969017, y: -0.8750484}
       - {x: 0.84375, y: -0.87504864}
+--- !u!114 &8009677693517230757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541188154014100130}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d232801632f1a83498c41da8fa84b6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!1 &6541188154015945290
 GameObject:
   m_ObjectHideFlags: 0

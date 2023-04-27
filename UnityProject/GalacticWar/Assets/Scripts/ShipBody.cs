@@ -42,13 +42,20 @@ public class ShipBody : MonoBehaviour
         Debug.Log("I AM HAVE DIE! GRAHHH");
         if (gameObject.GetComponent<PlayerControl>() != null)
         {
+            
             gameObject.GetComponent<PlayerControl>().enabled = false;
         }
         if (gameObject.GetComponent<EnemyFighterAI>() != null)
         {
+            
             gameObject.GetComponent<EnemyFighterAI>().enabled = false;
 
         }
+       /* if (gameObject.GetComponent<CargoShipAI>() != null)
+        {
+            gameObject.GetComponent<CargoShipAI>().enabled = false;
+
+        }*/
         gameObject.GetComponent<Collider2D>().isTrigger = true;
         //disable autocannons
         foreach (AutoTurret cannon in turrets)

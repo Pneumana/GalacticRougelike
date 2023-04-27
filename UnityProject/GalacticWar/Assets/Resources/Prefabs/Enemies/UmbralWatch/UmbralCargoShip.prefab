@@ -515,12 +515,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
-  health: 15
+  health: 50
   shield: 0
   currentHealth: 0
   currentShield: 0
   isDead: 0
   shieldDelay: -1
+  hittimer: 0
   shieldRegen: 0.01
 --- !u!114 &-963579447726579146
 MonoBehaviour:
