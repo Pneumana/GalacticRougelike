@@ -725,6 +725,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadGun
       objectReference: {fileID: 0}
+    - target: {fileID: 5961113950462281472, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961113950462281472, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961113950462281472, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961113950462281472, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961113950462281472, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961113950462281472, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -678376041
+      objectReference: {fileID: 0}
     - target: {fileID: 6146228176309342723, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
       propertyPath: isGun
       value: 1

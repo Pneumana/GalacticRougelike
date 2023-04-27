@@ -25,7 +25,7 @@ public class GameData
         this.money = 0;
         this.crystals = 0;
         this.exoticmatter = 0;
-        this.shipframe = "Basic";
+        this.shipframe = "Avocet";
         this.equippedWeapons = new List<int> { 0,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1 };
         this.weapons = new List<string> {"Basic"};
     }

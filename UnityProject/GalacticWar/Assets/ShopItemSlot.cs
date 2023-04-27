@@ -21,26 +21,34 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public string sellingItem;
     public int itemType;
-    private string[] loottable = new string[] { "Basic", "Railgun" };
-    private string[] shiptable = new string[] { "Basic", "Advanced", "Meatship"};
+    private string[] loottable = new string[] { "Basic", "Railgun", "Storm", "Minigun", "Rocket Launcher", "Shield", "Hull" };
+    private string[] shiptable = new string[] { "Avocet", "Ghost", "Meatship", "Reaper"};
     private string[] contracts = new string[] { "Dude", "OtherGuy" };
-
+    public ShopkeeperDialouge keeperDialouge;
     //i could do a fetch damage from prefab type thing for each entry. this makes it so this part only needs to have flavortext written.
     //checks each entry compared to the loottable[] to get the prefab name, then gets the spawned projectile, and from there the damage can be got.
     //stats and descriptions probably need to be set to different objectss
     private string[] guninfo = new string[] {
         "Damage: 5 \nRate of Fire:1\n0 Pierces\n0s Charge Time\n\nA reliable, standard kinetic slug cannon.",
-        "Damage: 20 \nRate of Fire:0.5\nInfinite Pierces\n1s Charge Time\n\nShoots a high velocity slug using magnets."
+        "Damage: 20 \nRate of Fire:0.5\nInfinite Pierces\n1s Charge Time\n\nShoots a high velocity slug using magnets.",
+        "Damage: 5 \nRate of Fire:0.5\n4 Pierces\n0s Charge Time\n\nShoots an  arcing bolt of electricity.",
+        "Damage: 1 \nRate of Fire:4\n0 Pierces\n0s Charge Time\n\nIncredibly high rate of fire.",
+        "Damage: 20 \nRate of Fire:0.33\n0 Pierces\n0s Charge Time\n\nFires an accelerating missle",
+        "Increases maximum shield by 5",
+        "Increases maximum health by 15"
     };
     private string[] shipinfo = new string[] {
-        "Health: \nSpeed: \nAgility: \nShield\n\nBasic chassis for small ships",
-        "Health: \nSpeed: \nAgility: \nShield\n\nBasic chassis for medium ships",
-        "Health: \nSpeed: \nAgility: \nShield\n\nA ship nicknamed after it's flesh-like plating"
+        "Health: \nSpeed: \nAgility: \nShield\n\nA small ship used frequently by pirates",
+        "Health: \nSpeed: \nAgility: \nShield\n\nA medium ship with many guns",
+        "Health: \nSpeed: \nAgility: \nShield\n\nA ship nicknamed after it's flesh-like plating",
+        "Health: \nSpeed: \nAgility: \nShield\n\nLarge ship that's basically a space station",
+
     };
     // Start is called before the first frame update
     void Start()
     {
         //get damage from attack
+        keeperDialouge = GameObject.Find("ShopkeeperText").GetComponent<ShopkeeperDialouge>();
         //weapon
         if(itemType == 0)
         {
@@ -150,6 +158,7 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                     bought = true;
                     display.GetComponent<UnityEngine.UI.Image>().color = new Color(0.5f, 0.5f, 0.5f);
                     soldText.GetComponent<TextMeshProUGUI>().enabled = true;
+                    keeperDialouge.SayThankYouMechanic();
                     //weapons
                     if(itemType == 0)
                     {
@@ -176,8 +185,13 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         else
         {
             //shake the money counter and meep-merp
+            NotEnoughMoney();
         }
         //if you have money, subtract it here
         
+    }
+    void NotEnoughMoney()
+    {
+        keeperDialouge.YouBroke();
     }
 }

@@ -63,8 +63,16 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
     {
         if (isGun)
         {
-            transform.Find("Circle").gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Textures/guns/" + DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[arrayIndex]]);
-            transform.localScale = new Vector3(2, 2, 1);
+            var gamedata = DataPersistanceManager.Instance.gameData;
+            try
+            {
+                transform.Find("Circle").gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Textures/guns/" + gamedata.weapons[gamedata.equippedWeapons[arrayIndex]]);
+                transform.localScale = new Vector3(2, 2, 1);
+            }
+            catch
+            {
+
+            }
         }
 
     }
@@ -78,7 +86,7 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
             if (!DataPersistanceManager.Instance.gameData.equippedWeapons.Contains(newequip))
             {
                 DataPersistanceManager.Instance.gameData.equippedWeapons[arrayIndex] = newequip;
-                Debug.Log("");
+                Debug.Log(arrayIndex + " set to " + DataPersistanceManager.Instance.gameData.weapons[newequip]);
             }
                 
             else

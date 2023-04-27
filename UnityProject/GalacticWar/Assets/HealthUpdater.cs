@@ -15,6 +15,8 @@ public class HealthUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = DataPersistanceManager.Instance.gameData.health.ToString() + " Health";
+        text.text = DataPersistanceManager.Instance.gameData.health.ToString() + " Health\n$ " + DataPersistanceManager.Instance.gameData.money.ToString() + " Credits\n"
+            + DataPersistanceManager.Instance.gameData.crystals.ToString() + " Crystals\n" +
+            DataPersistanceManager.Instance.gameData.exoticmatter.ToString() + " Exotic Matter";
     }
 }

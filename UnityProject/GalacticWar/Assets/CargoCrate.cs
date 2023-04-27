@@ -12,6 +12,9 @@ public class CargoCrate : MonoBehaviour
     {
         if (hitsToKill <= 0)
         {
+            if (spawnedResource == "crystals")
+                DataPersistanceManager.Instance.gameData.crystals += Random.Range(3, 6);
+            if(spawnedResource == "exotic")
             if (Resources.Load("Prefabs/Resources/" + spawnedResource) != null)
             {
                 var res = GameObject.Instantiate(Resources.Load("Prefabs/Resources/" + spawnedResource)) as GameObject;

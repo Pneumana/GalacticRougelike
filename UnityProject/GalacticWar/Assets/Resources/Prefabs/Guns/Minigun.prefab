@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 0}
-  bullet: RailgunBullet
+  bullet: MinigunBullet
   attackCooldown: 0
-  chargeMax: 1
+  chargeMax: -1
   currentCharge: 0
 --- !u!95 &3109093690829338239
 Animator:

@@ -68,6 +68,7 @@ public class ObjectiveTracker : MonoBehaviour, IObjective
                 var exit = Instantiate(Resources.Load<GameObject>("Prefabs/GameLogic/ExtractionZone"));
                 exit.transform.position = new Vector3(0, 0, 0);
                 spawnedItem = true;
+                //spawn point to center
             }
             
         }
@@ -83,6 +84,8 @@ public class ObjectiveTracker : MonoBehaviour, IObjective
                 var marker = new GameObject("ObjectiveMarker");
                 SpriteRenderer renderer = marker.AddComponent<SpriteRenderer>();
                 renderer.sprite = Resources.Load<Sprite>("Textures/UI/objective");
+                
+                
                 marker.transform.parent = player.transform;
                 objectMarkers.Add(marker);
             }
