@@ -68,6 +68,11 @@ public class ObjectiveTracker : MonoBehaviour, IObjective
                 var exit = Instantiate(Resources.Load<GameObject>("Prefabs/GameLogic/ExtractionZone"));
                 exit.transform.position = new Vector3(0, 0, 0);
                 spawnedItem = true;
+                var exitArrow = new GameObject("ExitArrow");
+                PlayAreaArrow exitArrowscript = exitArrow.AddComponent<PlayAreaArrow>();
+                SpriteRenderer exitsprite = exitArrow.AddComponent<SpriteRenderer>();
+                exitsprite.sprite = Resources.Load<Sprite>("Textures/UI/objective");
+                exitArrow.transform.localScale = new Vector3(1, 2, 1);
                 //spawn point to center
             }
             

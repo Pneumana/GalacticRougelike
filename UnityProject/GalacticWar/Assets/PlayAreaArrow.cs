@@ -23,6 +23,10 @@ public class PlayAreaArrow : MonoBehaviour
             float rot_z = Mathf.Atan2(0 - newpos.y, 0 - newpos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         }
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
        
     }
 }
