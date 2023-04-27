@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 962815321444911784}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &3217796079253403104
 TrailRenderer:
@@ -71,8 +71,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -678376041
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 1
   m_Parameters:
@@ -211,8 +211,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -678376041
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.5
   m_Parameters:
@@ -351,8 +351,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -678376041
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Time: 0.5
   m_Parameters:
@@ -453,10 +453,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8099165026295320275}
   - {fileID: 7053963245829830417}
   - {fileID: 6841400907590792223}
   - {fileID: 8344623101143196788}
+  - {fileID: 8099165026295320275}
   - {fileID: 8362739422606059906}
   - {fileID: 4621199751713017704}
   m_Father: {fileID: 0}
@@ -629,7 +629,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 962815321444911784}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8037696435913663337
 Camera:
@@ -736,7 +736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837717284589817979, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8837717284589817979, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837717284589817979, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8837717284589817979, guid: 554a2ce55a6448b428bd04382a0d352f, type: 3}
       propertyPath: m_LocalPosition.x
