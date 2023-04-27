@@ -590,11 +590,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   health: 50
-  shield: 100
+  shield: 25
   currentHealth: 0
   currentShield: 0
   isDead: 0
-  shieldDelay: 1
+  shieldDelay: 3
   hittimer: 1
   shieldRegen: 1
 --- !u!1 &9027611055407068551

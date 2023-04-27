@@ -432,9 +432,9 @@ MonoBehaviour:
   currentHealth: 0
   currentShield: 0
   isDead: 0
-  shieldDelay: 1
+  shieldDelay: 3
   hittimer: 0
-  shieldRegen: 1
+  shieldRegen: 2
 --- !u!60 &2493782850181071834
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   health: 50
-  shield: 0
+  shield: 10
   currentHealth: 0
   currentShield: 0
   isDead: 0

@@ -456,7 +456,7 @@ MonoBehaviour:
   currentHealth: 0
   currentShield: 0
   isDead: 0
-  shieldDelay: 1
+  shieldDelay: 3
   hittimer: 0
   shieldRegen: 1
 --- !u!1 &9027611055407068551

@@ -17,7 +17,7 @@ public class EquipItems : MonoBehaviour
     }
 
     // Update is called once per frame
-    void UpdateDisplay()
+    public void UpdateDisplay()
     {
         //kill all display prefabs
         for(int i =0; i <4; i++)
