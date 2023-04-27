@@ -18,6 +18,7 @@ public class DataPersistanceManager : MonoBehaviour
         if (Instance != null)
         {
             Debug.Log("there are 2 data managers in this scene");
+            Destroy(this.gameObject);
         }
         else
         {

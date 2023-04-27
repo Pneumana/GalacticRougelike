@@ -168,7 +168,8 @@ public class ShopItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
                     if(itemType == 1)
                     {
                         //reload equipped prefab
-                        currentGamedata.shipframe = sellingItem;
+                        DataPersistanceManager.Instance.gameData.shipframe = sellingItem;
+                        Debug.Log("set player ship to " + sellingItem);
                         GameObject.Find("SpawnPrefab").GetComponent<SpawnEquippablePrefab>().ReloadShip();
                     }
                 }

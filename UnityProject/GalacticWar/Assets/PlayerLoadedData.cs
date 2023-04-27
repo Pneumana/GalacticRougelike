@@ -10,9 +10,13 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
     bool mousedOver;
     void SpawnGun(string name)
     {
-        var newgun = GameObject.Instantiate(Resources.Load("Prefabs/Guns/" + name)) as GameObject;
-        newgun.transform.parent = transform.parent;
-        newgun.transform.position = transform.position;
+        if(Resources.Load("Prefabs/Guns/" + name) != null)
+        {
+            var newgun = GameObject.Instantiate(Resources.Load("Prefabs/Guns/" + name)) as GameObject;
+            newgun.transform.parent = transform.parent;
+            newgun.transform.position = transform.position;
+        }
+        
         Destroy(this.gameObject);
     }
     void SpawnShip(string name)
@@ -33,7 +37,16 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
         foreach(GameObject loader in loadguns)
         {
             var loaderData = loader.GetComponent<PlayerLoadedData>();
-            var goofiestVar = DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[loaderData.arrayIndex]];
+            var goofiestVar = "None";
+            try
+            {
+                goofiestVar = DataPersistanceManager.Instance.gameData.weapons[DataPersistanceManager.Instance.gameData.equippedWeapons[loaderData.arrayIndex]];
+            }
+            catch
+            {
+
+            }
+            
             if (goofiestVar == "Shield")
             {
                 newship.GetComponent<ShipBody>().shield += 5;
@@ -74,7 +87,10 @@ public class PlayerLoadedData : MonoBehaviour, IDataPersistance
 
             }
         }
-
+        else
+        {
+            SpawnShip(DataPersistanceManager.Instance.gameData.shipframe);
+        }
     }
     public void Clicked()
     {

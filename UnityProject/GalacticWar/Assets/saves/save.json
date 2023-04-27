@@ -1,11 +1,11 @@
 {
     "deaths": 0,
     "missionsCompleted": 0,
-    "health": 50,
-    "money": 0,
+    "health": 40,
+    "money": 500,
     "crystals": 0,
     "exoticmatter": 0,
-    "shipframe": "Avocet",
+    "shipframe": "Ghost",
     "equippedWeapons": [
         0,
         -1,
