@@ -11,19 +11,22 @@ public class PlayerControl : MonoBehaviour
     public float turnSpeed;
     bool cheats;
     public Rigidbody2D body;
+    public GameObject cursor;
+    public float dist;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        cursor = GameObject.Find("Cursor");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Shop", LoadSceneMode.Single);
-        }
+        }*/
         float y = baseSpeed;
         if (!cheats)
         {
@@ -44,14 +47,7 @@ public class PlayerControl : MonoBehaviour
                 body.rotation -= turnSpeed * Time.deltaTime;
             }
             body.velocity = transform.up * y;
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            {
-                Camera.main.orthographicSize -= 0.5f;
-            }
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            {
-                Camera.main.orthographicSize += 0.5f;
-            }
+            
             if (Input.GetKeyDown(KeyCode.F1))
             {
                 cheats = true;
@@ -87,5 +83,27 @@ public class PlayerControl : MonoBehaviour
             }
 
         }
+        //scale camera size off of distance to the cursor from this
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            Camera.main.orthographicSize -= 0.5f;
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            Camera.main.orthographicSize += 0.5f;
+        }
+        if (cursor != null)
+            CursorDistance();
+        else
+            cursor = GameObject.Find("Cursor");
+    }
+    private void CursorDistance()
+    {
+        Vector2 worldPosition = Camera.main.WorldToScreenPoint(transform.position);
+        var dis = Vector2.Distance(worldPosition, Input.mousePosition);
+
+        dis *= 0.05f;
+        dist = dis;
+        Camera.main.orthographicSize = Mathf.Min(Mathf.Max(10, dis), 25);
     }
 }

@@ -39,7 +39,7 @@ public class ShipBody : MonoBehaviour
         AutoTurret[] turrets = GetComponentsInChildren<AutoTurret>();
         ManualCannon[] cannons = GetComponentsInChildren<ManualCannon>();
         //die
-        Debug.Log("I AM HAVE DIE! GRAHHH");
+        //Debug.Log("I AM HAVE DIE! GRAHHH");
         if (gameObject.GetComponent<PlayerControl>() != null)
         {
             
